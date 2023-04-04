@@ -1,0 +1,67 @@
+﻿<Window x:Class="LB2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LB2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Введите ФИО работника"
+                           Style="{StaticResource StyleTextBlock}"/>
+                <TextBox Name="TxtFIO"
+                         Width="150"
+                           Height="30"
+                           Margin="5" FontSize="16"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Введите должность"
+                          Style="{StaticResource StyleTextBlock}"/>
+                <TextBox Name="TxtPost"
+                         Width="150"
+                           Height="30"
+                           Margin="5" FontSize="16"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Введите год поступления"
+                           Style="{StaticResource StyleTextBlock}"/>
+                <DatePicker Name="DtYears"
+                         Width="150"
+                           Height="30"
+                           Margin="5" FontSize="16"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <TextBlock Text="Результат выполнения программы:"
+                       Width="200"
+                       Margin="5"/>
+            <ListBox Name="LstWorkers"
+                     Width="400"
+                     Height="200" Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button  
+                Content="Выполнить"
+                Style="{StaticResource StyleSolveButton}"
+                Name="BtnSolve"
+                Click="BtnSolve_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
